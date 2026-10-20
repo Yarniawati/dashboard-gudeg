@@ -57,7 +57,7 @@ footer{margin-top:6px;color:var(--mu);font-size:12px;line-height:1.6}
 <div class="kpi"><small>Rating berbobot</small><strong id="k4"></strong><em>skala 1–5</em></div>
 </section>
 <section class="row">
-<div class="card"><div class="ch"><div><h2 id="tt">Omzet bersih per bulan</h2><span id="ts">Bulan tertinggi ditandai merah</span></div><div class="seg"><button class="on" data-m="om">Omzet</button><button data-m="tx">Transaksi</button></div></div><div id="trend"></div><p class="note" id="tn"></p></div>
+<div class="card"><div class="ch"><div><h2 id="tt">Omzet bersih per bulan (Rp Juta) </h2><span id="ts">Bulan tertinggi ditandai merah</span></div><div class="seg"><button class="on" data-m="om">Omzet</button><button data-m="tx">Transaksi</button></div></div><div id="trend"></div><p class="note" id="tn"></p></div>
 <div class="card"><div class="ch"><div><h2>Omzet bersih per outlet</h2><span id="os"></span></div></div><div id="outlet"></div></div>
 </section>
 <section class="row r2">
@@ -94,7 +94,7 @@ const pts=v.map((q,i)=>x(i)+','+y(q)).join(' ');
 s+='<polygon points="'+x(0)+','+y(0)+' '+pts+' '+x(v.length-1)+','+y(0)+'" fill="#6b3a22" opacity=".09"/><polyline points="'+pts+'" fill="none" stroke="#6b3a22" stroke-width="2.5" stroke-linejoin="round"/>';
 v.forEach((q,i)=>{const hi=i===pk,lo=i===lw&&v.length>1;s+='<circle cx="'+x(i)+'" cy="'+y(q)+'" r="'+(hi?6.5:lo?5:3.5)+'" fill="'+(hi?'#b8442f':'#6b3a22')+'"/>'+((hi||lo)&&v.length>1?'<text class="vl" x="'+x(i)+'" y="'+(y(q)-12)+'" text-anchor="middle">'+lb(q)+'</text>':'')+'<text class="ax" x="'+x(i)+'" y="'+(H-8)+'" text-anchor="middle">'+MN[ms[i]]+'</text>'});
 $('trend').innerHTML=s+'</svg>';
-$('tt').textContent=tm==='om'?'Omzet bersih per bulan (Rp juta)':'Jumlah transaksi per bulan';
+$('tt').textContent=tm==='om'?'Omzet bersih per bulan (Rp Juta)':'Jumlah transaksi per bulan';
 const vf=q=>tm==='om'?jt(q):nf(q)+' transaksi';
 $('tn').innerHTML=ms.length>1?'Bulan tertinggi: <b>'+MF[ms[pk]]+'</b> ('+vf(mxv)+'); terendah: <b>'+MF[ms[lw]]+'</b> ('+vf(mnv)+').':'Bulan terpilih: <b>'+MF[ms[0]]+'</b> ('+vf(mxv)+').';
 // outlet
